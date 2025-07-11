@@ -1,0 +1,47 @@
+# AWS Sentiment Analysis App
+
+This project is a simple Python Flask web application that performs "sentiment analysis" using "Amazon Comprehend" on AWS.  
+It is hosted on an "EC2 instance" with an IAM role that grants access to Comprehend.  
+
+When a user sends text to the '/analyze' endpoint, the app calls Amazon Comprehend’s sentiment analysis API and returns whether the sentiment is:  
+✅ POSITIVE  
+✅ NEGATIVE  
+✅ NEUTRAL  
+✅ MIXED  
+
+## 📂 Project Files:
+- 'app.py' — The main Flask application code.
+- 'requirements.txt' — Python dependencies required to run the app.
+
+
+## 🖥️ How to Run:
+1️⃣ Install the required Python libraries:
+           pip install -r requirements.txt
+
+
+## 2️⃣ Run the Flask application:
+            python3 app.py
+
+🧪 Example Usage:
+Send a POST request to /analyze with JSON body:
+
+json
+Copy code
+{
+  "text": "I love AWS!"
+}
+Sample response:
+
+json
+Copy code
+{
+  "sentiment": "POSITIVE"
+}
+
+
+☁️ AWS Services Used:
+EC2: To host and run the application.
+
+Amazon Comprehend: To analyze sentiment of the text.
+
+IAM Role: To grant the EC2 instance access to Comprehend.
